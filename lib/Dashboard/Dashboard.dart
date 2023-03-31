@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+import '../LatestOrders/latestOrder.dart';
+
 class DashboardPage extends StatefulWidget {
   const DashboardPage({Key? key}) : super(key: key);
 
@@ -329,6 +331,263 @@ class _DashboardPageState extends State<DashboardPage> {
                                 ),
                               ],
                             ),
+                            child: Column(
+                              // mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                SizedBox(height: 25,),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "4.4",
+                                      style: TextStyle(
+                                          fontSize: 28,
+                                          fontWeight: FontWeight.w800),
+                                    ),
+                                    Icon(
+                                      Icons.star,
+                                      color: Color(0xff33C918),
+                                      size: 28,
+                                    )
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Text(
+                                  "Based on 560 ratings",
+                                  style: TextStyle(
+                                      fontSize: 12, color: Color(0xff727272)),
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Icon(
+                                          Icons.star,
+                                          color: Color(0xff33C918),
+                                          size: 33,
+                                        ),
+                                        Icon(
+                                          Icons.star,
+                                          color: Color(0xff33C918),
+                                          size: 33,
+                                        ),
+                                        Icon(
+                                          Icons.star,
+                                          color: Color(0xff33C918),
+                                          size: 33,
+                                        ),
+                                        Icon(
+                                          Icons.star,
+                                          color: Color(0xff33C918),
+                                          size: 33,
+                                        ),
+                                        Icon(
+                                          Icons.star,
+                                          color: Color(0xff33C918),
+                                          size: 33,
+                                        ),
+                                      ],
+                                    ),
+                                    Text(
+                                      "480",
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w800),
+                                    )
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Icon(
+                                          Icons.star,
+                                          color: Color(0xff33C918),
+                                          size: 33,
+                                        ),
+                                        Icon(
+                                          Icons.star,
+                                          color: Color(0xff33C918),
+                                          size: 33,
+                                        ),
+                                        Icon(
+                                          Icons.star,
+                                          color: Color(0xff33C918),
+                                          size: 33,
+                                        ),
+                                        Icon(
+                                          Icons.star,
+                                          color: Color(0xff33C918),
+                                          size: 33,
+                                        ),
+                                        Icon(
+                                          Icons.star,
+                                          color:  Color(0xfff4f4f7),
+                                          size: 33,
+                                        ),
+                                      ],
+                                    ),
+                                    Text(
+                                      "480",
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w800),
+                                    )
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Icon(
+                                          Icons.star,
+                                          color: Color(0xff33C918),
+                                          size: 33,
+                                        ),
+                                        Icon(
+                                          Icons.star,
+                                          color: Color(0xff33C918),
+                                          size: 33,
+                                        ),
+                                        Icon(
+                                          Icons.star,
+                                          color: Color(0xff33C918),
+                                          size: 33,
+                                        ),
+                                        Icon(
+                                          Icons.star,
+                                          color: Color(0xfff4f4f7),
+                                          size: 33,
+                                        ),
+                                        Icon(
+                                          Icons.star,
+                                          color: Color(0xfff4f4f7),
+                                          size: 33,
+                                        ),
+                                      ],
+                                    ),
+                                    Text(
+                                      "480",
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w800),
+                                    )
+                                  ],
+                                ),
+
+                                Row(
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Icon(
+                                          Icons.star,
+                                          color: Color(0xff33C918),
+                                          size: 33,
+                                        ),
+                                        Icon(
+                                          Icons.star,
+                                          color: Color(0xff33C918),
+                                          size: 33,
+                                        ),
+                                        Icon(
+                                          Icons.star,
+                                          color: Color(0xfff4f4f7),
+                                          size: 40,
+                                        ),
+                                        Icon(
+                                          Icons.star,
+                                          color:  Color(0xfff4f4f7),
+                                          size: 40,
+                                        ),
+                                        Icon(
+                                          Icons.star,
+                                          color: Color(0xfff4f4f7),
+                                          size: 40,
+                                        ),
+                                      ],
+                                    ),
+                                    Text(
+                                      "480",
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w800),
+                                    )
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Row(
+                                  mainAxisAlignment:
+                                  MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Row(
+                                      children: [
+                                        Icon(
+                                          Icons.star,
+                                          color: Color(0xff33C918),
+                                          size: 33,
+                                        ),
+                                        Icon(
+                                          Icons.star,
+                                          color:  Color(0xfff4f4f7),
+                                          size: 33,
+                                        ),
+                                        Icon(
+                                          Icons.star,
+                                          color:  Color(0xfff4f4f7),
+                                          size: 33,
+                                        ),
+                                        Icon(
+                                          Icons.star,
+                                          color:  Color(0xfff4f4f7),
+                                          size: 33,
+                                        ),
+                                        Icon(
+                                          Icons.star,
+                                          color:  Color(0xfff4f4f7),
+                                          size: 33,
+                                        ),
+                                      ],
+                                    ),
+                                    Text(
+                                      "480",
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.w800),
+                                    )
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 10,
+                                ),
+                                Text(
+                                  "Rating since from system launch",
+                                  style: TextStyle(
+                                      fontSize: 12, color: Color(0xff727272)),
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       )
@@ -338,108 +597,7 @@ class _DashboardPageState extends State<DashboardPage> {
               ),
             ),
             Expanded(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: size.width*0.55,
-                   child: Column(
-                     mainAxisAlignment: MainAxisAlignment.start,
-                     crossAxisAlignment: CrossAxisAlignment.start,
-                     children: [
-                       Container(
-                         height: size.height*0.1,
-                         width: size.width,
-                         color: Color(0xfff4f4f7),
-                         child: Align(
-                           alignment: Alignment.centerLeft,
-                           child: RichText(
-                               text: TextSpan(
-                                 children: [
-                                   TextSpan(
-                                     text:"Lates ",style: TextStyle(fontSize: 18,
-                                       fontWeight: FontWeight.bold,
-                                       color: Colors.black)
-                                   ),
-                                   TextSpan(
-                                       text:"Orders",style: TextStyle(fontSize: 16,color: Colors.black)
-                                   )
-                                 ]
-                               )),
-                         ),
-
-                       ),
-                       Container(
-                         height: size.height*0.1,
-                         width: size.width,
-                         decoration: BoxDecoration(
-                           borderRadius: BorderRadius.circular(10),
-                           color: Colors.white
-                         ),
-                         child: Row(
-                           children: [
-                             Icon(Icons.location_on_outlined,size: 22,),
-                             Column(
-                               mainAxisAlignment: MainAxisAlignment.center,
-                               crossAxisAlignment: CrossAxisAlignment.center,
-                               children: [
-                                 Text("Order #1234",style: TextStyle(fontSize: 13,color: Colors.black),),
-                                 Text("25 Jan, 12:34 PM",style: TextStyle(fontSize: 13,color: Color(0xff636363)),)
-                               ],
-                             ),
-                             Column(
-                               children: [
-                                 Row(
-                                   children: [
-                                     Image(image: AssetImage("assets/img_2.png"),),
-
-
-                                   ],
-                                 )
-                               ],
-                             )
-
-
-                           ],
-                         ),
-                       )
-
-                     ],
-                   ),
-                  ),
-                  Container(
-                    width: size.width*0.32,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(25),
-                      color: Color(0xfff4f4f7)
-                    ),
-                    child:Column(
-                      children: [
-                        Image(image: AssetImage("assets/img.png"),height: 150,
-                          width: 170,fit:BoxFit.cover ,),
-                        Container(
-                          height: 60,
-                          width: 220,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(15),
-                            color: Colors.white
-                          ),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Image(image: AssetImage("assets/img_1.png"),),
-                              Text("New Orders",style: TextStyle(color: Colors.black,fontSize: 12),)
-
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-
-                  )
-                ],
-              ),
+              child: LatestOrderPage()
             )
           ],
         ),

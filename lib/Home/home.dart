@@ -31,7 +31,7 @@ class _DashboardState extends State<Dashboard> {
               children: [
                 SizedBox(height: 25,),
 
- Padding(padding: EdgeInsets.all(10),
+             Padding(padding: EdgeInsets.all(10),
  child: Image.asset("assets/kholil.jpg", fit: BoxFit.cover,height: 130, width: size.width,)),
 
               Expanded(

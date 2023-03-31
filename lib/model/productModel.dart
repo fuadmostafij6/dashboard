@@ -23,7 +23,7 @@ class ProductModel {
   String? title;
   double? price;
   String? description;
-  Category? category;
+  String? category;
   String? image;
   Rating? rating;
 
@@ -47,8 +47,6 @@ class ProductModel {
     "rating": rating?.toJson(),
   };
 }
-
-enum Category { MEN_S_CLOTHING, JEWELERY, ELECTRONICS, WOMEN_S_CLOTHING }
 
 
 

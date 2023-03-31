@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
 
 import 'Home/home.dart';
-import 'controllar/product_controllar.dart';
+import 'controller/product_controllar.dart';
 
 void main() async{
   WidgetsFlutterBinding.ensureInitialized();
@@ -12,7 +12,7 @@ void main() async{
   runApp(
       MultiProvider(
         providers: [
-          Provider<ProductControllar>(create: (_) => ProductControllar()),
+          ListenableProvider<ProductController>(create: (_) => ProductController()),
         ],
         child:MyApp())
       );

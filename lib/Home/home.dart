@@ -1,8 +1,10 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../Dashboard/Dashboard.dart';
+import '../controller/product_controllar.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -14,6 +16,20 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> {
   List list = ["Dashboard", "Inventory", "New order", "Customers", "Review", "Promote"];
   var selected=0;
+  bool loader = true;
+  Future loding()async{
+    final  productcontroller = Provider.of<ProductController>(context,listen: false);
+    productcontroller.getProduct();
+  }
+  @override
+  void initState() {
+    loding().then((value) {
+      setState(() {
+        loader=false;
+      });
+    });
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -87,6 +103,12 @@ class _DashboardState extends State<Dashboard> {
               ],
             ),
           ),
+
+          loader? const Expanded(
+            child: Center(
+              child: CircularProgressIndicator(),
+            ),
+          ):
           SizedBox(
             width: size.width*0.88,
             height: size.height,

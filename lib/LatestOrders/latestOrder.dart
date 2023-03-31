@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../controllar/product_controllar.dart';
+import '../controller/product_controllar.dart';
 class LatestOrderPage extends StatefulWidget {
   const LatestOrderPage({Key? key}) : super(key: key);
 
@@ -11,25 +11,18 @@ class LatestOrderPage extends StatefulWidget {
 
 class _LatestOrderPageState extends State<LatestOrderPage> {
 
-  var loder=true;
- Future loding()async{
-    final  productcontroller = Provider.of<ProductControllar>(context,listen: false);
-    productcontroller.getProduct();
-  }
+
+
   @override
   void initState() {
-    loding().then((value) {
-      setState(() {
-        loder=false;
-      });
-    });
+
     // TODO: implement initState
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    final  productcontroller = Provider.of<ProductControllar>(context,listen: false);
+    final  productcontroller = Provider.of<ProductController>(context,listen: false);
 
     var size=MediaQuery.of(context).size;
     return Scaffold(
@@ -37,7 +30,7 @@ class _LatestOrderPageState extends State<LatestOrderPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Container(
-            width: size.width*0.55,
+            width: size.width*0.54,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,23 +41,27 @@ class _LatestOrderPageState extends State<LatestOrderPage> {
                   color: Color(0xfff4f4f7),
                   child: Align(
                     alignment: Alignment.centerLeft,
-                    child: RichText(
-                        text: TextSpan(
-                            children: [
-                              TextSpan(
-                                  text:"Lates ",style: TextStyle(fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.black)
-                              ),
-                              TextSpan(
-                                  text:"Orders",style: TextStyle(fontSize: 16,color: Colors.black)
-                              )
-                            ]
-                        )),
+                    child: Padding(
+                      padding: const EdgeInsets.only(left:10),
+                      child: RichText(
+                          text: TextSpan(
+                              children: [
+                                TextSpan(
+                                    text:"Lates ",style: TextStyle(fontSize: 24,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black)
+                                ),
+                                TextSpan(
+                                    text:"Orders",style: TextStyle(fontSize: 24,color: Colors.black)
+                                )
+                              ]
+                          )),
+                    ),
                   ),
 
                 ),
 
+                productcontroller.productlist.isNotEmpty?
                 SizedBox(
                   height: size.height*0.15,
                   child: ListView.builder(
@@ -73,7 +70,7 @@ class _LatestOrderPageState extends State<LatestOrderPage> {
                       primary: false,
                       scrollDirection: Axis.vertical,
                       itemBuilder: (context,index){
-                       var data=productcontroller.productlist[index];
+                      var data=productcontroller.productlist[index];
                         return Container(
                           height: size.height*0.1,
                           width: size.width,
@@ -89,8 +86,8 @@ class _LatestOrderPageState extends State<LatestOrderPage> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  Text("Order #1234",style: TextStyle(fontSize: 13,color: Colors.black),),
-                                  Text("25 Jan, 12:34 PM",style: TextStyle(fontSize: 13,color: Color(0xff636363)),)
+                                  Text("Order #${data.id}",style: TextStyle(fontSize: 13,color: Colors.black),),
+                                  Text("${data.rating!.rate}",style: TextStyle(fontSize: 13,color: Color(0xff636363)),)
                                 ],
                               ),
                               Column(
@@ -101,7 +98,7 @@ class _LatestOrderPageState extends State<LatestOrderPage> {
                                     children: [
                                       Image(image: AssetImage("assets/img_2.png"),height: 22,width: 22,),
                                       SizedBox(width: 10,),
-                                      Text("Md Yeasin",style: TextStyle(fontSize: 14,color: Colors.black),)
+                                      Text("${data.category}",style: TextStyle(fontSize: 14,color: Colors.black),)
 
                                     ],
                                   ),
@@ -109,7 +106,7 @@ class _LatestOrderPageState extends State<LatestOrderPage> {
                                     children: [
                                       Image(image: AssetImage("assets/img_3.png"),height: 22,width: 22,),
                                       SizedBox(width: 10,),
-                                      Text("\$60.54 (Paid Online)",style: TextStyle(fontSize: 10,color: Color(0xff636363)),)
+                                      Text("\$${data.price}",style: TextStyle(fontSize: 10,color: Color(0xff636363)),)
 
                                     ],
                                   ),
@@ -136,7 +133,7 @@ class _LatestOrderPageState extends State<LatestOrderPage> {
                           ),
                         );
                       }),
-                ),
+                ): SizedBox(),
 
 
               ],
@@ -148,14 +145,23 @@ class _LatestOrderPageState extends State<LatestOrderPage> {
             width: size.width*0.32,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(25),
-                color: Color(0xfff4f4f7)
+                color: Color(0xfff4f4f7),
+              boxShadow:  [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  spreadRadius: 5,
+                  blurRadius: 7,
+                  offset:
+                  Offset(0, 3), // changes position of shadow
+                ),
+              ]
             ),
             child:Column(
               children: [
                 Image(image: AssetImage("assets/img.png"),height: 150,
                   width: 170,fit:BoxFit.cover ,),
                 Container(
-                  height: 60,
+                  padding: EdgeInsets.all(10),
                   width: 220,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
@@ -165,8 +171,13 @@ class _LatestOrderPageState extends State<LatestOrderPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      Image(image: AssetImage("assets/img_1.png"),),
-                      Text("New Orders",style: TextStyle(color: Colors.black,fontSize: 12),)
+                      SizedBox(height: 8,),
+                      Image(
+
+                        image: AssetImage("assets/img_1.png"),height: 24,width: 24,),
+                      SizedBox(height: 5,),
+                      Text("New Orders",style: TextStyle(color: Colors.black,fontSize: 15),),
+                      SizedBox(height: 8,),
 
                     ],
                   ),

@@ -309,23 +309,26 @@ class _DashboardPageState extends State<DashboardPage> {
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.all(5.0),
-                        child: Container(
-                          height: size.height * 0.46,
-                          width: size.width * 0.24,
-                          decoration: BoxDecoration(
-                            color: Color(0xfff4f4f7),
-                            borderRadius: BorderRadius.circular(10),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.grey.withOpacity(0.5),
-                                spreadRadius: 5,
-                                blurRadius: 7,
-                                offset:
-                                    Offset(0, 3), // changes position of shadow
-                              ),
-                            ],
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              vertical: 20,),
+                          child: Container(
+                            height: size.height * 0.46,
+                            width: size.width * 0.24,
+                            decoration: BoxDecoration(
+                              color: Color(0xfff4f4f7),
+                              borderRadius: BorderRadius.circular(10),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.grey.withOpacity(0.5),
+                                  spreadRadius: 5,
+                                  blurRadius: 7,
+                                  offset:
+                                      Offset(0, 3), // changes position of shadow
+                                ),
+                              ],
+                            ),
                           ),
                         ),
                       )
@@ -335,115 +338,107 @@ class _DashboardPageState extends State<DashboardPage> {
               ),
             ),
             Expanded(
-              child: Container(
-                child: Row(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      child: Container(
-                        height: size.height*0.2,
-                        width: size.width*0.55,
-                       child: Column(
-                         mainAxisAlignment: MainAxisAlignment.start,
-                         crossAxisAlignment: CrossAxisAlignment.start,
-                         children: [
-                           Container(
-                             height: size.height*0.1,
-                             width: size.width,
-                             color: Color(0xfff4f4f7),
-                             child: Align(
-                               alignment: Alignment.centerLeft,
-                               child: RichText(
-                                   text: TextSpan(
-                                     children: [
-                                       TextSpan(
-                                         text:"Lates ",style: TextStyle(fontSize: 18,
-                                           fontWeight: FontWeight.bold,
-                                           color: Colors.black)
-                                       ),
-                                       TextSpan(
-                                           text:"Orders",style: TextStyle(fontSize: 16,color: Colors.black)
-                                       )
-                                     ]
-                                   )),
-                             ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    width: size.width*0.55,
+                   child: Column(
+                     mainAxisAlignment: MainAxisAlignment.start,
+                     crossAxisAlignment: CrossAxisAlignment.start,
+                     children: [
+                       Container(
+                         height: size.height*0.1,
+                         width: size.width,
+                         color: Color(0xfff4f4f7),
+                         child: Align(
+                           alignment: Alignment.centerLeft,
+                           child: RichText(
+                               text: TextSpan(
+                                 children: [
+                                   TextSpan(
+                                     text:"Lates ",style: TextStyle(fontSize: 18,
+                                       fontWeight: FontWeight.bold,
+                                       color: Colors.black)
+                                   ),
+                                   TextSpan(
+                                       text:"Orders",style: TextStyle(fontSize: 16,color: Colors.black)
+                                   )
+                                 ]
+                               )),
+                         ),
 
-                           ),
-                           Container(
-                             height: size.height*0.1,
-                             width: size.width,
-                             decoration: BoxDecoration(
-                               borderRadius: BorderRadius.circular(10),
-                               color: Colors.white
-                             ),
-                             child: Row(
+                       ),
+                       Container(
+                         height: size.height*0.1,
+                         width: size.width,
+                         decoration: BoxDecoration(
+                           borderRadius: BorderRadius.circular(10),
+                           color: Colors.white
+                         ),
+                         child: Row(
+                           children: [
+                             Icon(Icons.location_on_outlined,size: 22,),
+                             Column(
+                               mainAxisAlignment: MainAxisAlignment.center,
+                               crossAxisAlignment: CrossAxisAlignment.center,
                                children: [
-                                 Icon(Icons.location_on_outlined,size: 22,),
-                                 Column(
-                                   mainAxisAlignment: MainAxisAlignment.center,
-                                   crossAxisAlignment: CrossAxisAlignment.center,
-                                   children: [
-                                     Text("Order #1234",style: TextStyle(fontSize: 13,color: Colors.black),),
-                                     Text("25 Jan, 12:34 PM",style: TextStyle(fontSize: 13,color: Color(0xff636363)),)
-                                   ],
-                                 ),
-                                 Column(
-                                   children: [
-                                     Row(
-                                       children: [
-                                         Image(image: AssetImage("assets/img_2.png"),),
-
-
-                                       ],
-                                     )
-                                   ],
-                                 )
-
-
+                                 Text("Order #1234",style: TextStyle(fontSize: 13,color: Colors.black),),
+                                 Text("25 Jan, 12:34 PM",style: TextStyle(fontSize: 13,color: Color(0xff636363)),)
                                ],
                              ),
-                           )
+                             Column(
+                               children: [
+                                 Row(
+                                   children: [
+                                     Image(image: AssetImage("assets/img_2.png"),),
 
-                         ],
-                       ),
-                      ),
+
+                                   ],
+                                 )
+                               ],
+                             )
+
+
+                           ],
+                         ),
+                       )
+
+                     ],
+                   ),
+                  ),
+                  Container(
+                    width: size.width*0.32,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(25),
+                      color: Color(0xfff4f4f7)
                     ),
-                    Expanded(
-                      child: Container(
-                        height: size.height,
-                        width: size.width*0.3,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(25),
-                          color: Color(0xfff4f4f7)
-                        ),
-                        child:Column(
-                          children: [
-                            Image(image: AssetImage("assets/img.png"),height: 150,
-                              width: 170,fit:BoxFit.cover ,),
-                            Container(
-                              height: 60,
-                              width: 220,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(15),
-                                color: Colors.white
-                              ),
-                              child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.center,
-                                children: [
-                                  Image(image: AssetImage("assets/img_1.png"),),
-                                  Text("New Orders",style: TextStyle(color: Colors.black,fontSize: 12),)
+                    child:Column(
+                      children: [
+                        Image(image: AssetImage("assets/img.png"),height: 150,
+                          width: 170,fit:BoxFit.cover ,),
+                        Container(
+                          height: 60,
+                          width: 220,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(15),
+                            color: Colors.white
+                          ),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Image(image: AssetImage("assets/img_1.png"),),
+                              Text("New Orders",style: TextStyle(color: Colors.black,fontSize: 12),)
 
-                                ],
-                              ),
-                            )
-                          ],
-                        ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ),
 
-                      ),
-                    )
-                  ],
-                ),
+                  )
+                ],
               ),
             )
           ],

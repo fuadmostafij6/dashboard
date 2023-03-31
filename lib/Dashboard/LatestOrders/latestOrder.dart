@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../controller/product_controllar.dart';
+import '../../controller/product_controllar.dart';
+
 class LatestOrderPage extends StatefulWidget {
   const LatestOrderPage({Key? key}) : super(key: key);
 

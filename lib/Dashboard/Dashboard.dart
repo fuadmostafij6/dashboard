@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-
-import '../LatestOrders/latestOrder.dart';
 import 'DashboardTopLeft/dashBoardTopLeft.dart';
 import 'DashboardTopRight/dashboardRight.dart';
+import 'LatestOrders/latestOrder.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({Key? key}) : super(key: key);

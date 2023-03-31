@@ -53,6 +53,7 @@ Widget topRight(Size size){
               ),
               CircleAvatar(
                 radius: 35,
+                backgroundImage: AssetImage("assets/img_7.png"),
               )
             ],
           ),

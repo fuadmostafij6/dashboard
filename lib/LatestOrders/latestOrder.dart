@@ -158,10 +158,10 @@ class _LatestOrderPageState extends State<LatestOrderPage> {
             ),
             child:Column(
               children: [
-                Image(image: AssetImage("assets/img.png"),height: 150,
+                Image(image: AssetImage("assets/img.png"),height: 140,
                   width: 170,fit:BoxFit.cover ,),
                 Container(
-                  padding: EdgeInsets.all(10),
+                  padding: EdgeInsets.all(7),
                   width: 220,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(15),
@@ -171,13 +171,13 @@ class _LatestOrderPageState extends State<LatestOrderPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      SizedBox(height: 8,),
+                      // SizedBox(height: 8,),
                       Image(
 
                         image: AssetImage("assets/img_1.png"),height: 24,width: 24,),
                       SizedBox(height: 5,),
                       Text("New Orders",style: TextStyle(color: Colors.black,fontSize: 15),),
-                      SizedBox(height: 8,),
+                      SizedBox(height: 5,),
 
                     ],
                   ),
